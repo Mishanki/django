@@ -1,7 +1,7 @@
 # Django 4: Personal education
 
 
-### Виртуальное окружение
+## Виртуальное окружение
 
 #### Создать venv
 ```bash
@@ -13,7 +13,7 @@ python3 -m venv env
 source my_env/bin/activate
 ```
 
-### Django 4
+## Django 4
 
 #### Установка
 ```bash
@@ -42,7 +42,7 @@ django-admin startproject mysite
 python manage.py startapp blog
 ```
 
-### Миграции
+## Миграции
 
 #### Создать миграцию
 ```bash
@@ -60,7 +60,15 @@ cd mysite
 python manage.py migrate
 ```
 
-### Работа через shell
+## Пользователи
+
+#### Создать суперпользователя
+```bash
+python manage.py createsuperuser
+```
+
+
+## Работа через shell
 
 #### Открыть оболочку Python
 ```bash

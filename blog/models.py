@@ -1,8 +1,14 @@
+from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class PublishManager(models.Manager):
+    def get_queryset(self) -> QuerySet:
+        return super().get_queryset().filter(status=Post.Status.PUBLISH)
+
+
 class Post(models.Model):
 
     class Status(models.TextChoices):
@@ -25,6 +31,9 @@ class Post(models.Model):
         choices=Status.choices,
         default=Status.DRAFT
     )
+
+    objects = models.Manager() # default менеджер
+    published = PublishManager() # custom менеджер
 
     class Meta:
         ordering = ['-publish']
