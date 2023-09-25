@@ -20,6 +20,11 @@ source my_env/bin/activate
 pip install Django~=4.1.0
 ```
 
+#### Зависимости
+```bash
+pip install -r requirements.txt
+```
+
 #### Версия
 ```bash
 python -m django --version

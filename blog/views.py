@@ -9,7 +9,7 @@ from django.views.decorators.http import require_POST
 
 @require_POST
 def post_comment(request, post_id):
-    post = get_object_or_404(Post, id=post_id, status=Post.status.PUBLISH)
+    post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISH)
 
     comment = None
     # Комментарий был отправлен
@@ -24,7 +24,7 @@ def post_comment(request, post_id):
 
     return render(
         request,
-        'blog/post/comment.html',
+        'blog/post/includes/comment.html',
         {
             'post': post,
             'form': form,
