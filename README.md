@@ -61,7 +61,6 @@ python manage.py sqlmigrate blog 0001
 
 #### Запуск миграций
 ```bash
-cd mysite
 python manage.py migrate
 ```
 
